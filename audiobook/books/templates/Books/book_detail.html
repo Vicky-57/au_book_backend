@@ -1,0 +1,24 @@
+<!-- templates/books/book_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.book_name }}</title>
+</head>
+<body>
+    <h1>{{ book.book_name }}</h1>
+    {% if book.book_image %}
+        <img src="{{ book.book_image.url }}" alt="{{ book.book_name }}">
+    {% else %}
+        <p>No image available</p>
+    {% endif %}
+    <h2>Chapters</h2>
+    <ul>
+        {% for chapter in chapters %}
+        <li>
+            <a href="{% url 'chapter_detail' book.pk chapter.pk %}">{{ chapter.chapter_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

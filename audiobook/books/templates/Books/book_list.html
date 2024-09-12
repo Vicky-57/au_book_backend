@@ -1,0 +1,18 @@
+<!-- templates/books/book_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{% url 'book_detail' book.pk %}">{{ book.book_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

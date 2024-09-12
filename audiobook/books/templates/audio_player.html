@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shloka Player</title>
+    <!-- Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.11/dist/plyr.css" />
+</head>
+<body>
+    <h1>Shloka Player</h1>
+    
+    <!-- Audio Player -->
+    <audio id="player" controls>
+        <source src="{{ shloka.audio_file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.11/dist/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player');
+    </script>
+</body>
+</html>

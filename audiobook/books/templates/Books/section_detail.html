@@ -1,0 +1,22 @@
+<!-- templates/books/section_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ section.section_name }}</title>
+</head>
+<body>
+    <h1>{{ section.section_name }}</h1>
+    {% if section.section_image %}
+        <img src="{{ section.section_image.url }}" alt="{{ section.section_name }}">
+    {% endif %}
+    <h2>Shlokas</h2>
+    <ul>
+        {% for shloka in shlokas %}
+        <li>
+            <a href="{% url 'shloka_detail' shloka.pk %}">{{ shloka.shlok_text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
